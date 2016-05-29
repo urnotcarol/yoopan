@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+  <title>Yoo盘 - 注册</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Yoo盘</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/">主页</a></li>
+          <li><a href="disk">我的Yoo盘</a></li>
+          <li><a href="takeaway">随心TakeAway</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="signin">登录</a></li>
+          <li class="active"><a href="signup">注册</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+      <div class="container">
+			<div class="row">
+				<div class="span12">
+          <h2>看不见我看不见我</h2>
+					<form class="form-horizontal">
+						 <legend>注册</legend>
+						<div class="form-group">
+              <p id="usernameHint"></p>
+              <label for="inputUsername">用户名&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+							<input class="span12" type="text" id="inputUsername" placeholder="8-12位，只能包含字母/数字/下划线"/>
+						</div>
+						<div class="form-group">
+              <p id="passwordHint"></p>
+              <label for="inputUsername">密码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+							<input class="span12" type="password" id="inputPassword" />
+						</div>
+						<div class="form-group">
+              <p id="assureHint"></p>
+              <label for="inputUsername">确认密码&nbsp</label>
+              <input class="span12" type="password" id="assurePassword" />
+						</div>
+						<div class="form-group">
+							 <button type="submit" id="signupButton"class="btn btn-large btn-block btn-info">注册</button>
+						</div>
+					</form>
+				</div>
+			</div>
+</div>
+
+<script src="jquery/dist/jquery.js"></script>
+<script src="signup.js"></script>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

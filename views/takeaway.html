@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+  <title>随心TakeAway</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Yoo盘</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/">主页</a></li>
+          <li><a href="disk">我的Yoo盘</a></li>
+          <li class="active"><a href="takeaway">随心TakeAway</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="signin">登录</a></li>
+          <li><a href="signup">注册</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+  <div class="row">
+    <div class="span6">
+      <h2>
+        看不见我看不见我
+      </h2>
+      <form action="/takeaway/upload" enctype="multipart/form-data" method="post">
+        <fieldset>
+          <legend>上传文件</legend>
+          <ul class="unstyled">
+            <li>
+              <input id="resource" name="resource" type="file" multiple/>
+            </li>
+            <li>
+              <input class="btn-large btn-block btn-info" type="submit" value="上传" />
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="span6">
+      <form>
+        <fieldset>
+          <legend>下载文件</legend>
+          <ul class="unstyled">
+            <li>
+              <input type="text" />
+            </li>
+            <li>
+              <input class="btn-large btn-block btn-info" type="submit" value="下载" />
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </div>
+
+  </div>
+</div>
+<script src="jquery/dist/jquery.js"></script>
+<script src="main.js"></script>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
