@@ -16,8 +16,6 @@ $(function() {
       $("#usernameHint").html("用户名不能少于8位～");
     } else if(username.length > 20) {
       $("#usernameHint").html("用户名不能多于20位～");
-    } else if(username.replace("^[A-Za-z0-9]+$").length > 0) {
-      $("#usernameHint").html("只能包含字母，数字和下划线～");
     } else {
       validUsername = 1;
       $("#usernameHint").html("");
@@ -44,10 +42,15 @@ $(function() {
       $("assurePasswordHint").html("");
     }
 
-    if(validUsername === 1 && validPassword === 1 && assurePassword === 1) {
+    console.log(validUsername === 1);
+    console.log(validPassword === 1);
+    console.log(validUsername === 1 && validPassword === 1 && assurePassword === 1);
+
+
+    if(validUsername === 1 && validPassword === 1 && samePassword === 1) {
       $.ajax({
         type: "POST",
-        url: "/signup/userSignup",
+        url: "signup/userSignup",
         data: {
           username: username,
           password: password

@@ -10,6 +10,19 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public/'));
 app.use(express.static('bower_components/'));
 
+var connection;
+app.all("*", function(res, req, next) {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "heyyoo",
+    database: "yoopan"
+  });
+  connection.connect(function(err) {
+    next();
+  });
+});
+
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "./public/upload")
@@ -35,10 +48,24 @@ app.get("/signup", function(req, res) {
   res.sendFile(__dirname + "/views/signup.html")
 })
 
-app.get("signup/userSignup", function(req, res) {
-  res.send({
-    status: 10000,
-    massage: {}
+app.post("/signup/userSignup", function(req, res) {
+  // res.send({
+  //   status: 10000,
+  //   massage: {}
+  // });
+  console.log(req.body);
+  var insertUserSQL = "insert into user (username, password) values ('" +
+  req.body.username + "','" + req.body.password + "');";
+  connection.query(insertUserSQL, function(err, rows) {
+    if (err) {
+      throw err;
+    } else {
+      res.send({
+        status: 10000,
+        message: {},
+        data: {}
+      });
+    }
   });
 });
 
