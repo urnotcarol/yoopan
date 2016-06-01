@@ -43,6 +43,7 @@
 					<form class="form-horizontal">
 						 <legend>登录</legend>
 						<div class="form-group">
+              <p id="inputHint"></p>
               <label for="inputUsername">用户名&nbsp</label>
 							<input class="span14" type="text" id="inputUsername" />
 						</div>
@@ -51,18 +52,16 @@
 							<input class="span14" type="password" id="inputPassword" />
 						</div>
 						<div class="form-group">
-							 <label class="checkbox"><input type="checkbox" /> 记住我</label>
-						</div>
-						<div class="form-group">
-							 <button type="submit" class="btn btn-large btn-block btn-info">登录</button>
+							 <button id="signinButton" type="submit" class="btn btn-large btn-block btn-info">登录</button>
 						</div>
 					</form>
 				</div>
 			</div>
 	</div>
 </div>
+<script src="jquery/dist/jquery.js"></script>
+<script src="jquery.cookie.js"></script>
 <script src="signin.js"></script>
-<script src="jquery/dist/jquery.min.js"></script>
 <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

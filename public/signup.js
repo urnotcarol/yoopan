@@ -55,6 +55,8 @@ $(function() {
         success: function(result) {
           if(result.status === 10000) {
             alert("注册成功！");
+            $.cookie("username", username, {expires: 1, path: "/"});
+            $.cookie("password", password, {expires: 1, path: "/"});
             location.href = "/";
           }
         }
