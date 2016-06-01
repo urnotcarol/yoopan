@@ -49,10 +49,6 @@ app.get("/signup", function(req, res) {
 })
 
 app.post("/signup/userSignup", function(req, res) {
-  // res.send({
-  //   status: 10000,
-  //   massage: {}
-  // });
   console.log(req.body);
   var insertUserSQL = "insert into user (username, password) values ('" +
   req.body.username + "','" + req.body.password + "');";

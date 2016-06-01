@@ -9,13 +9,15 @@ $(function() {
     var validUsername = 0;
     var validPassword = 0;
     var samePassword = 0;
-    // console.log(username.replace("^[A-Za-z0-9]+$"));
+    console.log(username.replace(/\w/g, ""));
     if(username.length === 0) {
       $("#usernameHint").html("用户名不能为空～");
     } else if(username.length < 8) {
       $("#usernameHint").html("用户名不能少于8位～");
     } else if(username.length > 20) {
       $("#usernameHint").html("用户名不能多于20位～");
+    } else if(username.replace(/\w/g, "").length > 0) {
+      $("#usernameHint").html("只能包含字母/数字/下划线");
     } else {
       validUsername = 1;
       $("#usernameHint").html("");
@@ -34,18 +36,13 @@ $(function() {
     console.log(assurePassword);
 
     if(assurePassword.length === 0) {
-      $("assurePasswordHint").html("请再输入一次密码");
+      $("#assureHint").html("请再输入一次密码");
     } else if(assurePassword != password) {
-      $("assurePasswordHint").html("两次输入的密码不一致～");
+      $("#assureHint").html("两次输入的密码不一致～");
     } else{
       samePassword = 1;
       $("assurePasswordHint").html("");
     }
-
-    console.log(validUsername === 1);
-    console.log(validPassword === 1);
-    console.log(validUsername === 1 && validPassword === 1 && assurePassword === 1);
-
 
     if(validUsername === 1 && validPassword === 1 && samePassword === 1) {
       $.ajax({
