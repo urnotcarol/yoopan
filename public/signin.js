@@ -1,5 +1,5 @@
 $(function() {
-  if($.cookie("username") != "undifined") {
+  if($.cookie("username") != "null") {
     location.href = "/";
   }
 

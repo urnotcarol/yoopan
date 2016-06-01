@@ -1,4 +1,8 @@
 $(function() {
+  if($.cookie("username") != "null") {
+    location.href = "/";
+  }
+  
   $("#signupButton").on("click", function(evt) {
     evt.preventDefault();
 
@@ -33,7 +37,6 @@ $(function() {
       validPassword = 1;
       $("passwordHint").html("");
     }
-    console.log(assurePassword);
 
     if(assurePassword.length === 0) {
       $("#assureHint").html("请再输入一次密码");
