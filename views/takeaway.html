@@ -38,42 +38,44 @@
 
   <div class="container">
   <div class="row">
-    <div class="span6">
+    <div style="display: block"  class="span6">
       <h2>
         看不见我看不见我
       </h2>
       <form enctype="multipart/form-data" method="post" action="takeaway/upload">
         <fieldset>
           <legend>上传文件</legend>
-          <ul class="unstyled">
-            <li>
               <input id="resource" name="resource" type="file"/>
-            </li>
-            <li>
-              <input id="uploadButton" class="btn-large btn-block btn-info" type="submit" value="上传" />
-            </li>
-          </ul>
+              <p>
+                <input id="uploadButton" class="btn btn-primary" type="submit" value="上传文件" />
+              </p>
         </fieldset>
       </form>
     </div>
 
-    <div class="span6">
+    <div style="display: block" class="span6">
       <form>
         <fieldset>
           <legend>下载文件</legend>
-          <ul class="unstyled">
-            <li>
-              <input type="text" />
-            </li>
-            <li>
-              <input class="btn-large btn-block btn-info" type="submit" value="下载" />
-            </li>
-          </ul>
+              <input id="inputAccessCode" type="text" />
+              <p>
+                <input id="accessButton" class="btn btn-primary" type="button" value="提取文件" />
+              </p>
         </fieldset>
       </form>
+      <div>
+        <table class="table table-bordered" id="fileInfo" style="display:none">
+          <thead>
+            <th date-id="fileName">文件名</th>
+            <th data-id="size">大小</th>
+            <th data-id="download">功能</th>
+          </thead>
+          <tbody id="file">
+          </tbody>
+        </table>
+      </div>
     </div>
-
-  </div>
+</div>
 </div>
 <script src="jquery/dist/jquery.js"></script>
 <script src="jquery.cookie.js"></script>

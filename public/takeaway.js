@@ -12,17 +12,27 @@ $(function() {
     location.href = location.href;
   });
 
-  // $("#uploadButton").on("click", function() {
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "/takeaway/upload",
-  //     data: {},
-  //     success: function(result) {
-  //       if(result.status === 10000) {
-  //         alert("上传成功。您的提取码为" + result.data.accessCode + "。");
-  //         location.href = "/takeaway";
-  //       }
-  //     }
-  //   });
-  // });
+  if(isNaN($("#inputAccessCode").val()) === false) {
+    $("#accessButton").on("click", function() {
+      console.log($("#inputAccessCode").val());
+
+        $.get("/takeaway/displayFile", {
+          accessCode: $("#inputAccessCode").val()
+        }, function(result) {
+          if(result.status === 10000) {
+            $("#fileInfo").css("display", "block");
+            var outputs = "<tr>" +
+              "<td style='width: 500px'>" + result.data.originalName + "</td>" +
+              "<td style='width: 350px'>" + parseFloat(result.data.size / 1024).toFixed(1) + " KB</td>" +
+              "<td style='width: 350px'>" + "<a href='/takeaway/download/" + result.data.accessCode + "'>下载</a>" + "</td>" +
+              "</tr>";
+            $("#file").html(outputs);
+          } else {
+            alert("您输入的提取码不正确呦～");
+            location.href = location.href;
+          }
+        }
+      );
+    });
+  }
 });

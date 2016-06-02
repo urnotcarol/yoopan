@@ -4,5 +4,7 @@ var router = express.Router();
 
 router.get("/", takeaway.displayPage);
 router.post("/upload", takeaway.uploadStrategy.single("resource"), takeaway.upload);
+router.get("/displayFile", takeaway.displayFile);
+router.get("/download/*", takeaway.download);
 
 module.exports = router;
