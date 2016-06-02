@@ -42,15 +42,15 @@
       <h2>
         看不见我看不见我
       </h2>
-      <form action="/takeaway/upload" enctype="multipart/form-data" method="post">
+      <form enctype="multipart/form-data" method="post" action="takeaway/upload">
         <fieldset>
           <legend>上传文件</legend>
           <ul class="unstyled">
             <li>
-              <input id="resource" name="resource" type="file" multiple/>
+              <input id="resource" name="resource" type="file"/>
             </li>
             <li>
-              <input class="btn-large btn-block btn-info" type="submit" value="上传" />
+              <input id="uploadButton" class="btn-large btn-block btn-info" type="submit" value="上传" />
             </li>
           </ul>
         </fieldset>

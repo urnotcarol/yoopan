@@ -12,6 +12,19 @@ app.use(express.static('bower_components/'));
 
 route.setRoutes(app);
 
+// app.get("/disk", function(req, res) {
+//   res.sendFile(__dirname + "/views/disk.html")
+// })
+//
+// app.get("/takeaway", function(req, res) {
+//   res.sendFile(__dirname + "/views/takeaway.html")
+// })
+//
+// app.post("/takeaway/upload", upload.array("resource", 3), function (req, res, next) {
+//   console.log(req.files[0].originalname);
+//   res.redirect("/takeaway");
+// });
+
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
