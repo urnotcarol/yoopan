@@ -1,6 +1,22 @@
 $(function() {
-  if($.cookie("username") != "null") {
-    location.href = "/";
+  var username = $.cookie("username");
+  var password = $.cookie("password");
+  if(username != "null" && password != "null") {
+    $.ajax({
+      type: "POST",
+      url: "signin/userSignin",
+      data: {
+        username: username,
+        password: password
+      },
+      success: function(result) {
+        if(result.status === 10000) {
+          location.href = "/";
+        } else if(result.status === 10001) {
+          location.href = "/signin";
+        }
+      }
+    });
   }
 
   $("#signinButton").on("click", function(evt) {
@@ -27,6 +43,7 @@ $(function() {
           password: password
         },
         success: function(result) {
+          console.log(result);
           if(result.status === 10000) {
             $.cookie("username", username, {expires: 1, path: "/"});
             $.cookie("password", password, {expires: 1, path: "/"});

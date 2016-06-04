@@ -1,4 +1,6 @@
 var connection = require("./connection.js");
+var utils = require("utility");
+
 
 exports.displayPage = function(req, res) {
   res.sendfile("views/signup.html");
@@ -12,7 +14,7 @@ exports.userSignup = function(req, res) {
     } else {
       if(rows.length === 0) {
         var insertUserSQL = "insert into user (username, password) values ('" +
-        req.body.username + "','" + req.body.password + "');";
+        req.body.username + "','" + utils.md5(req.body.password) + "');";
         connection.query(insertUserSQL, function(err, rows) {
           if (err) {
             throw err;

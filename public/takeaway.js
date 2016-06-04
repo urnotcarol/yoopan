@@ -12,10 +12,13 @@ $(function() {
     location.href = location.href;
   });
 
-  $("#accessButton").on("click", function() {
+  $("#accessButton").on("click", function(evt) {
+    evt.preventDefault();
     var accessCode = $("#inputAccessCode").val();
-    if($.isNumeric(accessCode) && accessCode.length === 6) {
-      $.get("/takeaway/displayFile", {
+    if (accessCode.length === 0) {
+      $("#accessCodeHint").html("请输入提取码～");
+    } else if($.isNumeric(accessCode) && accessCode.length === 6) {
+      $.get("/takeaway/file", {
         accessCode: $("#inputAccessCode").val()
       }, function(result) {
         if(result.status === 10000) {
@@ -27,13 +30,13 @@ $(function() {
             "</tr>";
           $("#file").html(outputs);
         } else {
-          alert("您输入的提取码不正确呦～");
-          location.href = location.href;
+          $("#accessCodeHint").html("请输入正确的提取码～");
+          $("#inputAccessCode").val("");
         }
       });
     } else {
-      alert("您输入的提取码不正确呦～");
-      location.href = location.href;
+      $("#accessCodeHint").html("请输入正确的提取码～");
+      $("#inputAccessCode").val("");
     }
   });
 });

@@ -34,6 +34,38 @@
       </div><!--/.nav-collapse -->
     </div>
   </nav>
+  <h2>看不见我看不见我</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10">
+        <form enctype="multipart/form-data" method="post" action="disk/upload">
+          <fieldset>
+            <legend>上传文件到我的Yoo盘</legend>
+                <input id="resource" name="resource" type="file"/>
+                <p></p>
+                  <input id="uploadButton" class="btn btn-primary" type="submit" value="上传" />
+          </fieldset>
+      </div>
+      </form>
+      <div class="col-xs-12">
+        <br>
+        <br>
+        <legend>我的Yoo盘</legend>
+        <p id="noFileHint" style="display:none" class="text-primary">这里还没有文件呦～</p>
+        <table class="table table-striped" id="fileInfo" style="display:none">
+          <thead>
+            <th date-id="fileName">文件名</th>
+            <th data-id="size">大小</th>
+            <th data-id="createDate">修改时间</th>
+            <th data-id="download">功能</th>
+          </thead>
+          <tbody id="file">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
 <script src="jquery/dist/jquery.js"></script>
 <script src="jquery.cookie.js"></script>

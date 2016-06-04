@@ -1,7 +1,29 @@
 $(function() {
-  if($.cookie("username") != "null") {
-    location.href = "/";
+  var username = $.cookie("username");
+  var password = $.cookie("password");
+  if(username != "null" && password != "null") {
+    $.ajax({
+      type: "POST",
+      url: "signin/userSignin",
+      data: {
+        username: username,
+        password: password
+      },
+      success: function(result) {
+        if(result.status === 10000) {
+          location.href = "/";
+        } else if(result.status === 10001) {
+          location.href = "/signup";
+        }
+      }
+    });
   }
+  
+  $("#exit").on("click", function() {
+    $.cookie("username", null);
+    $.cookie("password", null);
+    location.href = location.href;
+  });
 
   $("#signupButton").on("click", function(evt) {
     evt.preventDefault();
@@ -13,7 +35,6 @@ $(function() {
     var validUsername = 0;
     var validPassword = 0;
     var samePassword = 0;
-    console.log(username.replace(/\w/g, ""));
     if(username.length === 0) {
       $("#usernameHint").html("用户名不能为空～");
     } else if(username.length < 6) {
@@ -58,6 +79,8 @@ $(function() {
         success: function(result) {
           if(result.status === 10000) {
             alert("注册成功！");
+            location.href = "/disk";
+
             $.cookie("username", username, {expires: 1, path: "/"});
             $.cookie("password", password, {expires: 1, path: "/"});
           } else if(result.status === 10001) {

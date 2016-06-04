@@ -1,4 +1,5 @@
 var connection = require("./connection.js");
+var utils = require("utility");
 
 exports.displayPage = function(req, res) {
   res.sendfile("views/signin.html");
@@ -6,7 +7,7 @@ exports.displayPage = function(req, res) {
 
 exports.userSignin = function(req, res) {
   var readUserSQL = "select * from user where username = '" + req.body.username +
-  "' and password = '" + req.body.password + "';"
+  "' and password = '" + utils.md5(req.body.password) + "';"
   connection.query(readUserSQL, function(err, rows) {
     if(err) {
       throw err;
