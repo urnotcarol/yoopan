@@ -7,8 +7,8 @@ $(function() {
   }
 
   $("#exit").on("click", function() {
-    $.cookie("username", "null");
-    $.cookie("password", "null");
-    location.href = "/";
-  })
+    $.cookie("username", null);
+    $.cookie("password", null);
+    location.href = location.href;
+  });
 });

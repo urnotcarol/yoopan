@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-  <title>Yoo盘 - 注册</title>
+  <title>注册 - Yoo盘</title>
 </head>
 <body>
 
@@ -39,24 +39,31 @@
 				<div class="span12">
           <h2>看不见我看不见我</h2>
 					<form class="form-horizontal">
-						 <legend>注册</legend>
-						<div class="form-group">
-              <p id="usernameHint"></p>
-              <label for="inputUsername">用户名&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-							<input class="span12" type="text" id="inputUsername" placeholder="6-12位，只能包含字母/数字/下划线"/>
+							<div class="form-group">
+              <p class="col-sm-offset-2 text-primary" id="usernameHint"></p>
+              <label for="inputUsername" class="col-sm-2 control-label">用户名</label>
+              <div class="col-sm-7">
+                <input class="form-control" type="text" id="inputUsername" placeholder="6-12位，只能包含字母/数字/下划线"/>
+              </div>
 						</div>
 						<div class="form-group">
-              <p id="passwordHint"></p>
-              <label for="inputUsername">密码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-							<input class="span12" type="password" id="inputPassword" />
+              <p class="col-sm-offset-2 text-primary" id="passwordHint"></p>
+              <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+              <div class="col-sm-7">
+                <input class="form-control" type="password" id="inputPassword" />
+              </div>
 						</div>
 						<div class="form-group">
-              <p id="assureHint"></p>
-              <label for="inputUsername">确认密码&nbsp</label>
-              <input class="span12" type="password" id="assurePassword" />
+              <p class="col-sm-offset-2 text-primary" id="assureHint"></p>
+              <label for="inputUsername" class="col-sm-2 control-label">确认密码</label>
+              <div class="col-sm-7">
+                <input class="form-control" type="password" id="assurePassword" />
+              </div>
 						</div>
 						<div class="form-group">
-							 <button type="submit" id="signupButton"class="btn btn-large btn-block btn-info">注册</button>
+              <div class="col-sm-offset-2 col-sm-7">
+                <button id="signupButton" type="submit" class="btn btn-primary btn-lg btn-block">注册</button>
+               </div>
 						</div>
 					</form>
 				</div>

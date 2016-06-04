@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-  <title>Yoo盘 - 登录</title>
+  <title>登录 - Yoo盘</title>
 </head>
 <body>
 
@@ -41,18 +41,23 @@
 			<div class="row">
 				<div class="span4">
 					<form class="form-horizontal">
-						 <legend>登录</legend>
 						<div class="form-group">
-              <p id="inputHint"></p>
-              <label for="inputUsername">用户名&nbsp</label>
-							<input class="span14" type="text" id="inputUsername" />
+              <p class="col-sm-offset-2 text-primary" id="inputHint"></p>
+                <label for="inputUsername" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-7">
+                  <input class="form-control" type="text" id="inputUsername">
+                </div>
 						</div>
 						<div class="form-group">
-              <label for="inputPassword">密码&nbsp</label>
-							<input class="span14" type="password" id="inputPassword" />
+              <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+              <div class="col-sm-7">
+                <input class="form-control" type="password" id="inputPassword" />
+              </div>
 						</div>
 						<div class="form-group">
-							 <button id="signinButton" type="submit" class="btn btn-large btn-block btn-info">登录</button>
+              <div class="col-sm-offset-2 col-sm-7">
+                <button id="signinButton" type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+              </div>
 						</div>
 					</form>
 				</div>

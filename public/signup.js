@@ -28,7 +28,7 @@ $(function() {
     }
 
     if(password.length === 0) {
-      $("passwordHint").html("密码不能为空～");
+      $("#passwordHint").html("密码不能为空～");
     } else if(password.length < 6) {
       $("#passwordHint").html("密码不能少于6位～");
     } else if(password.length > 30) {

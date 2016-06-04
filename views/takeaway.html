@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-  <title>随心TakeAway</title>
+  <title>随心TakeAway - Yoo盘</title>
 </head>
 <body>
 
@@ -38,7 +38,7 @@
 
   <div class="container">
   <div class="row">
-    <div style="display: block"  class="span6">
+    <div style="display: block"  class="col-xs-6">
       <h2>
         看不见我看不见我
       </h2>
@@ -46,21 +46,28 @@
         <fieldset>
           <legend>上传文件</legend>
               <input id="resource" name="resource" type="file"/>
-              <p>
+              <p></p>
                 <input id="uploadButton" class="btn btn-primary" type="submit" value="上传文件" />
-              </p>
+
         </fieldset>
       </form>
     </div>
 
-    <div style="display: block" class="span6">
+    <div style="display: block" class="col-xs-6">
       <form>
+        <h2>
+          看不见我看不见我
+        </h2>
         <fieldset>
           <legend>下载文件</legend>
-              <input id="inputAccessCode" type="text" />
-              <p>
-                <input id="accessButton" class="btn btn-primary" type="button" value="提取文件" />
-              </p>
+          <div class="col-sm-5">
+            <input class="form-control" id="inputAccessCode" type="text" placeholder="提取码" />
+            <p></p>
+              <input id="accessButton" class="btn btn-primary" type="button" value="提取文件" />
+
+          </div>
+
+
         </fieldset>
       </form>
       <div>
